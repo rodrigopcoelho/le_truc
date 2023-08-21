@@ -1,0 +1,7 @@
+<h1>All the products</h1>
+
+<%= link_to 'Leisure', products_leisure_path %>
+<%= link_to 'Work', products_work_path %>
+<%= link_to 'Lunch', products_lunch_path %>
+
+<%= render "index_category", products: @products %>
