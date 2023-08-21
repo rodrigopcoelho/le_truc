@@ -5,15 +5,19 @@
     <ul class="icons-list d-flex">
       <div class="icon-card">
         <li><i class="fa-solid fa-border-all fa-2xl"></i></li>
+        <li>All</li>
       </div>
       <div class="icon-card">
         <li><i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i></li>
+        <li>Leisure</li>
       </div>
       <div class="icon-card">
         <li><i class="fa-solid fa-mug-hot fa-2xl"></i></li>
+        <li>Lunch</li>
       </div>
       <div class="icon-card">
         <li><i class="fa-solid fa-laptop-code fa-2xl"></i></li>
+        <li>Work</li>
       </div>
     </ul>
   </div>
@@ -30,7 +34,7 @@
           <div class="card-body product-card-body">
             <h5 class="card-title"><%= product.name %></h5>
             <div class="card-details d-flex">
-              <p class="card-text flex-grow-1"><%= product.price %> <i class="fa-solid fa-coins"></i></p> 
+              <p class="card-text flex-grow-1"><%= product.price %> <i class="fa-solid fa-coins"></i></p>
               <%= link_to "Rent!", products_path, class:"btn btn-rent" %>
             </div>
           </div>
