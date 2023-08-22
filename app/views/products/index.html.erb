@@ -1,50 +1,49 @@
 <h1 class="bg-info">NAV BAR HERE</h1>
+
 <div class="index-container">
 
   <div class="icons-container">
-    <ul class="icons-list d-flex">
       <div class="icon-card">
-        <li><i class="fa-solid fa-border-all fa-2xl"></i></li>
-        <li>All</li>
+        <i class="fa-solid fa-border-all fa-2xl"></i>
+        <p>All</p>
       </div>
       <div class="icon-card">
-        <li><i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i></li>
-        <li>Leisure</li>
+        <i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i>
+        <p>Leisure</p>
       </div>
       <div class="icon-card">
-        <li><i class="fa-solid fa-mug-hot fa-2xl"></i></li>
-        <li>Lunch</li>
+        <i class="fa-solid fa-utensils fa-2xl"></i>
+        <p>Lunch</p>
       </div>
       <div class="icon-card">
-        <li><i class="fa-solid fa-laptop-code fa-2xl"></i></li>
-        <li>Work</li>
+        <i class="fa-solid fa-laptop-code fa-2xl"></i>
+        <p>Work</p>
       </div>
-    </ul>
   </div>
 
-
-  <div class="d-flex product-card-container">
+  <div class="product-card-container">
     <% @products.each do |product| %>
 
-      <div class="card product-card" style="width: 18rem;">
+      <div class="product-card">
 
         <div class="product-content">
-          <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80", class:"img-thumbnail" %>
+          <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" %>
 
-          <div class="card-body product-card-body">
-            <h5 class="card-title"><%= product.name %></h5>
-            <div class="card-details d-flex">
-              <p class="card-text flex-grow-1"><%= product.price %> <i class="fa-solid fa-coins"></i></p>
-              <%= link_to "Rent!", products_path, class:"btn btn-rent" %>
+          <div class="product-card-body">
+            <h5><%= product.name %></h5>
+            <div class="card-details">
+              <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+              <%= link_to "Rent!", products_path, class:"btn-rent" %>
             </div>
           </div>
+
         </div>
-        <%# <div class="card-footer card-footer-color">
-          <small class="text-muted">Avaible</small>
-        </div> %>
+
       </div>
     <% end %>
   </div>
 
 </div>
 <h6 class="bg-info">FOOTER HERE</h6>
+
+// TESTE
