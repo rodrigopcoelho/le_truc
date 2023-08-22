@@ -11,7 +11,8 @@
     <div class="left-container">
 
       <div class="image-product cont">
-        <%= cl_image_tag 'https://res.cloudinary.com/dtng1edik/image/upload/v1692719147/mmfgxvestmdbbnn6ds0d.jpg', crop: fill %>
+        <%# <%= cl_image_tag 'mmfgxvestmdbbnn6ds0d.jpg', crop: fill %>
+        <%= image_tag('https://res.cloudinary.com/dtng1edik/image/upload/v1692719147/mmfgxvestmdbbnn6ds0d.jpg') %>
       </div>
 
       <div class="info-product cont">
@@ -29,7 +30,7 @@
         <form action="">
           <input type="date" name="day-rent" id="" class="form-control">
           <input type="datetime" name="time-rent" id="" placeholder="ex: 9am to 10am" class="form-control">
-          <input type="submit" value="Schedule!" class="btn btn-primary">
+          <input type="submit" value="Schedule!" class="btn">
         </form>
       </div>
 
