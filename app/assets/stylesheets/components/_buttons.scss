@@ -3,3 +3,32 @@
   text-decoration: none;
   font-size: 25px;
 }
+
+.btn-gradient {
+  background: linear-gradient(137deg, #6610F2 0%, #D4423B 57.62%, #E60F05 100%);
+  color: #FFF;
+  padding: 10px 100px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+.btn-red {
+  background-color: #E53B33;
+  color: #FFF;
+  padding: 10px 100px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
