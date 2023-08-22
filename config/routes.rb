@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "pages#landing"
+  devise_for :users
   resources :products
 end

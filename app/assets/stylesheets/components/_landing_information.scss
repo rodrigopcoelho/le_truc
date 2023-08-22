@@ -1,0 +1,22 @@
+.landing-information {
+  margin-left: 150px;
+  margin-top: 150px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h1 {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 80px;
+    padding-bottom: 40px;
+  }
+
+  h1 span {
+    background-image: linear-gradient(to bottom, #6610F2, #D4423B, #E60F05);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+  }
+}
