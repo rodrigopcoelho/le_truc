@@ -1,19 +1,43 @@
-<div>
+<div class="main-container-show">
 
-  <div class="left-container">
+  <div class="header-product-show">
+    <h1><%= @product.name %></h1>
 
-    <div class="image-product">
+    <%= render 'product_category_pill',  product: @product %>
+  </div>
+
+  <div class="description-product-container">
+
+    <div class="left-container">
+
+      <div class="image-product cont">
+        <%= image_tag('https://learn.kregtool.com/content/uploads/2021/03/953A1144-2.jpg') %>
+      </div>
+
+      <div class="info-product cont">
+        <p>
+          <%= @product.description %>
+        </p>
+      </div>
+
     </div>
 
-    <div class="info-product">
+    <div class="right-container">
+
+      <div class="schedule-form cont">
+        <p><%= @product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+        <form action="">
+          <input type="date" name="day-rent" id="">
+          <input type="datetime" name="time-rent" id="" placeholder="ex: 9am to 10am">
+          <input type="submit" value="Schedule!">
+        </form>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="right-container">
-
-    <div class="schedule-form">
-    </div>
+  <div class="reviews-container cont">
 
   </div>
 

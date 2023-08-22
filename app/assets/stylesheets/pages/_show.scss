@@ -1,0 +1,75 @@
+.main-container-show {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 250px;
+
+  height: 200vh;
+
+}
+
+.header-product-show {
+  margin-bottom: 30px;
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+// PRODUCT DESCRIPTION STYLING
+
+
+.description-product-container {
+  display: flex;
+}
+
+.cont {
+  border: solid;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+// LEFT CONTAINER || PRODUCT INFO
+
+.left-container {
+  width: 65%;
+  margin-right: 20px;
+}
+
+.image-product {
+  margin-bottom: 20px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.info-product {
+  padding: 20px;
+}
+
+// RIGHT CONTAINER || FORMS
+
+.right-container {
+  width: 35%;
+  // margin-left: 30px;
+}
+
+.schedule-form {
+
+  padding: 20px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 50px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// REVIEWS
+
+.reviews-container {
+  margin-top: 20px;
+  height: 30vh;
+}
