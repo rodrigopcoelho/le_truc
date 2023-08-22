@@ -2,4 +2,5 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :products
+  get "dashboard", to: "products#dashboard"
 end

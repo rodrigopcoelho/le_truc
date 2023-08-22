@@ -18,8 +18,9 @@
     transform: scale(1.05);
   }
 }
+
 .btn-red {
-  background-color: #E53B33;
+  background-color: $red;
   color: #FFF;
   padding: 10px 100px;
   border: none;

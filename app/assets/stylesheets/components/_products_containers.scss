@@ -1,3 +1,4 @@
+// Index
 .index-container {
   h6 {
     text-align: center;
@@ -25,5 +26,16 @@
 }
 
 .col-grid {
+  display: flex;
+}
+
+// Dashboard
+.dashboard-container {
+  width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.dashboard-products-container {
   display: flex;
 }
