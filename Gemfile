@@ -85,3 +85,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# OpenAI API (to create descriptions)
+gem "ruby-openai"

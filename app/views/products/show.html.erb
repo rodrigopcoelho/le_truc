@@ -11,8 +11,7 @@
     <div class="left-container">
 
       <div class="image-product cont">
-        <%# <%= cl_image_tag 'mmfgxvestmdbbnn6ds0d.jpg', crop: fill %>
-        <%= image_tag('https://res.cloudinary.com/dtng1edik/image/upload/v1692719147/mmfgxvestmdbbnn6ds0d.jpg') %>
+        <%= cl_image_tag @product.photo.key, crop: :fill %>
       </div>
 
       <div class="info-product cont">
