@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg bg-light " id="navbar" role="navbar">
+  <div class="container-fluid p-4">
+    <a class="navbar-brand" href="#"> <%= image_tag "logo.svg", alt: "Le Wagon", width: "40px", height: "40px" %> </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse align-items-center justify-content-between" id="navbarSupportedContent">
+      <h1>le truc </h1>
+
+      <form class="d-flex search-input justify-content-between align-items-center" role="search">
+        <input class="form-control ms-2 border-0 bg-transparent w-50 h-100 rounded-pill shadow-none" type="search" placeholder="QUERO MORRER" aria-label="Search">
+       <button class="btn btn-search-red me-3 d-flex justify-content-center align-items-center" type="submit"> <%= image_tag "search.svg", alt: "search icon"%></button>
+      </form>
+
+      <div class="user-back d-flex justify-content-center align-items-center">
+        <div class="dropdown ">
+          <a class="btn d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-bars ms-1 treebars" style="color: #444444;"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+        <a class="navbar-brand" href="#"> <%= image_tag "user-icon.svg", alt: "user icon", width:"29px" %> </a>
+      </div>
+
+    </div>
+  </div>
+</nav>
