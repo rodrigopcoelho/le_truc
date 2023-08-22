@@ -22,11 +22,16 @@
 }
 
 .product-card-body {
-  padding: 10px;
+  padding: 25px 15px 15px 15px;
+  min-height: 140px;
 
   h5 {
     font-family:'Poppins', sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   p {
