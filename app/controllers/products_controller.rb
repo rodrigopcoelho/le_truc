@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def dashboard
-    raise
+    # raise
     if current_user.admin
       @products = Product.all
     else
