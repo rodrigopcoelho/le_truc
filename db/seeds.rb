@@ -21,7 +21,7 @@ end
 def choose_cat(raw_cat)
   if raw_cat == "l_"
     "leisure"
-  elsif raw_cat == "w"
+  elsif raw_cat == "w_"
     "work"
   elsif raw_cat == "lu"
     "lunch"
@@ -72,7 +72,7 @@ img_json.each do |img|
     price: rand(1..5),
     user: User.first
   )
-  
+
   product.photo.attach(io: img_file, filename: "#{prod_cat_file[2]}.#{img_format}", content_type: "image/#{img_format}")
   product.save
 end
