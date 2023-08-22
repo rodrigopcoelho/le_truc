@@ -61,7 +61,7 @@
   width: 80px;
   height: 80px;
   border-radius: 5px;
-  background-color: $red;
+  background-color: #e48883;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   font-family:'Inter', sans-serif;
 
@@ -69,4 +69,8 @@
     margin: 0;
   }
 
+}
+
+.activer {
+  background-color: $red;
 }
