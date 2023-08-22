@@ -2,6 +2,8 @@ require "open-uri"
 require "json"
 require "openai"
 
+# METHODS
+
 def treat_name(raw_name)
   raw = raw_name[(raw_name.index("/") + 1)..]
 
@@ -26,7 +28,28 @@ def choose_cat(raw_cat)
   end
 end
 
-# abrir o json
+# OPEN AI DESCRIPTION GENERATION
+
+# def description_gen(product_name)
+#   OpenAI.configure do |config|
+#     config.access_token = 'k-De9Wdi9Onkh1P4S9klitT3BlbkFJWCjwPV7PazrAJ4HoB2fK'
+#   end
+
+#   client = OpenAI::Client.new
+
+#   response = client.chat(
+#     parameters: {
+#       model: "gpt-3.5-turbo",
+#       messages: [{ role: "user", content: "Create a short description for a marketplace product that is named #{product_name}"}],
+#       temperature: 0.7
+#     }
+#   )
+
+#   response.dig("choices", 0, "message", "content")
+# end
+
+# SEED ITERATION
+
 url_cd = "https://res.cloudinary.com/dtng1edik/image/list/upload.json"
 
 url_cd_open = URI.open(url_cd).read
@@ -44,29 +67,12 @@ img_json.each do |img|
   product = Product.new(
     name: prod_cat_file[0],
     category: choose_cat(prod_cat_file[1]),
-    description: Faker::Lorem.paragraphs(number: 1),
+    description: Faker::Lorem.sentence(word_count: 20),
+    # description: description_gen(prod_cat_file[0]),
     price: rand(1..5),
     user: User.first
   )
-
+  
   product.photo.attach(io: img_file, filename: "#{prod_cat_file[2]}.#{img_format}", content_type: "image/#{img_format}")
   product.save
 end
-
-# def description_gen(product_name)
-#   OpenAI.configure do |config|
-#     config.access_token = ENV.fetch("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")
-#   end
-
-#   client = OpenAI::Client.new
-
-#   response = client.chat(
-#     parameters: {
-#       model: "gpt-3.5-turbo",
-#       messages: [{ role: "user", content: "Create a short description for a marketplace product that is named #{product_name}"}],
-#       temperature: 0.7
-#     }
-#   )
-
-#   response.dig("choices", 0, "message", "content")
-# end
