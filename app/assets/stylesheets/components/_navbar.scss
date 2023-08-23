@@ -30,6 +30,12 @@ text-transform: lowercase;
   height: 40px;
   border-radius: 50%;
   background-color: $red;
+
+}
+.btn-search-red:hover{
+  background: $red !important;
+  width: 43px;
+  height: 43px;
 }
 
 .btn-search-red img{
