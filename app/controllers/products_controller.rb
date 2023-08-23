@@ -10,11 +10,12 @@ class ProductsController < ApplicationController
 
   def dashboard
     # raise
-    if current_user.admin
-      @products = Product.all
-    else
-      errors.add
-    end
+    # if current_user.admin
+    #   @products = Product.all
+    # else
+    #   errors.add
+    # end
+    @products = Product.all if current_user.admin
   end
 
   def new
@@ -22,9 +23,11 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # raise
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
-      redirect_to dashboard_path
+      redirect_to product_path(@product)
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +37,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @products.update(product_params)
+    @product.update(product_params)
     redirect_to dashboard_path
   end
 
