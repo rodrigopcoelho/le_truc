@@ -24,11 +24,15 @@
 
     <div class="right-container">
 
+      <div class="nice-phrase cont">
+        <h2>Use the <%= @product.name %> as you want!</h2>
+      </div>
+
       <div class="schedule-form cont">
-        <p><%= @product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+        <p class="product-price"><%= @product.price %> 💰</p>
         <form action="">
           <input data-controller="datepicker" type="string" name="day-rent" id="" class="form-control d-none">
-          <input type="submit" value="Schedule!" class="btn btn-secondary btn-lg btn-block">
+          <input type="submit" value="Schedule 📆" class="btn-schedule-form">
         </form>
         <%# <%= simple_form_for @product do |f| %>
           <%#= f.input :opening_date,
@@ -42,8 +46,7 @@
 
   </div>
 
-  <div class="reviews-container cont">
-
-  </div>
+  <%# <div class="reviews-container cont">
+  </div> %>
 
 </div>

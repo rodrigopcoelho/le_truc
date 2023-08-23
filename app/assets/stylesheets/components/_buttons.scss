@@ -68,3 +68,15 @@
     transform: scale(1.05);
   }
 }
+
+.btn-schedule-form {
+  margin-top: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

@@ -42,7 +42,7 @@
 
 .info-product {
   padding: 20px;
-  background-color: rgb(221, 219, 219);
+  background-color: #eee7fa;
 
   p {
     margin-bottom: 0;
@@ -56,13 +56,34 @@
   margin-left: 30px;
 }
 
+.nice-phrase {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    margin-bottom: 0;
+    background: linear-gradient(137deg, rgba(102, 16, 242, 1) 0%, rgba(212, 66, 59, 1) 57.62%, rgba(230, 15, 5, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari/WebKit browsers */
+    color: transparent;
+  }
+}
+
 .schedule-form {
 
   padding: 20px;
   position: sticky;
   position: -webkit-sticky; /* Safari */
   top: 50px;
-  background-color: #ed9693;
+  color: whitesmoke;
+  background: linear-gradient(137deg, rgba(102, 16, 242, 0.7) 0%, rgba(212, 66, 59, 0.7) 57.62%, rgba(230, 15, 5, 0.7) 100%) !important;
+
+  .product-price {
+    text-align: center;
+    font-size: 22px;
+  }
 
   form {
     display: flex;
