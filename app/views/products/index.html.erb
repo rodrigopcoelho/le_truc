@@ -23,15 +23,15 @@
     <div class="row-grid">
       <% @products.each do |product| %>
         <div class="col-grid">
-          <div class="product-content">
+          <div class="product-card-content">
             <%= link_to product_path(product.id) do %>
               <%= cl_image_tag product.photo.key, crop: :fill %>
             <% end %>
             <div class="product-card-body">
               <h5><%= product.name %></h5>
-              <div class="card-details">
-                <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
-                <%= link_to icon('fas', 'cart-plus'), products_path, class:"btn-rent" %>
+              <div class="product-card-details">
+                <p><%= product.price %> 💰</p>
+                <%= link_to icon('fas', 'calendar-day'), products_path, class:"btn-rent" %>
               </div>
             </div>
 
