@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+
+  <div class="dashboard-user-container">
+    <%# avatar %>
+    <p><%= current_user.username %></p>
+    <p><%= current_user.email %></p>
+  </div>
+
+  <div>
+
+    <div class="dashboard-products-container">
+      <h5>Products</h5>
+      <%= link_to "Add a product", new_product_path, class:"btn btn-red" %>
+    </div>
+
+    <% @products.each do |product| %>
+      <div class="dashboard-product-content">
+
+        <div class="dashboard-product-details">
+          <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" %>
+          <h5><%= product.name %></h5>
+          <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+        </div>
+
+        <div class="dashboard-product-buttons">
+          <%= link_to "Edit" %>
+          <%= link_to "Delete" %>
+        </div>
+
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

@@ -1,9 +1,7 @@
-<h1 class="bg-info">NAV BAR HERE</h1>
-
 <div class="index-container">
-
+<h6>Browse by category</h6>
   <div class="icons-container">
-      <div class="icon-card">
+      <div class="icon-card activer">
         <i class="fa-solid fa-border-all fa-2xl"></i>
         <p>All</p>
       </div>
@@ -21,29 +19,23 @@
       </div>
   </div>
 
-  <div class="product-card-container">
-    <% @products.each do |product| %>
-
-      <div class="product-card">
-
-        <div class="product-content">
-          <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" %>
-
-          <div class="product-card-body">
-            <h5><%= product.name %></h5>
-            <div class="card-details">
-              <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
-              <%= link_to "Rent!", products_path, class:"btn-rent" %>
+  <div class="container-grid">
+    <div class="row-grid">
+      <% @products.each do |product| %>
+        <div class="col-grid">
+          <div class="product-content">
+            <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" %>
+            <div class="product-card-body">
+              <h5><%= product.name %></h5>
+              <div class="card-details">
+                <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+                 <%# precisa de ediçao %>
+                <%= link_to icon('fas', 'cart-plus'), products_path, class:"btn-rent" %>
+              </div>
             </div>
           </div>
-
         </div>
-
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
 </div>
-<h6 class="bg-info">FOOTER HERE</h6>
-
-// TESTE
