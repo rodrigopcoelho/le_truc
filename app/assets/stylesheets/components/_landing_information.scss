@@ -1,9 +1,5 @@
 .landing-information {
-  margin-left: 150px;
-  margin-top: 150px;
 
-  display: flex;
-  flex-direction: column;
   gap: 20px;
 
   h1 {
@@ -19,4 +15,20 @@
     -webkit-text-fill-color: transparent;
     color: black;
   }
+}
+
+.div-img-land{
+
+  background-image: url(capaland.png);
+  width: 1030px;
+  height:100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+
+}
+
+.padding-land-text{
+
+  padding-bottom: 161px;
 }

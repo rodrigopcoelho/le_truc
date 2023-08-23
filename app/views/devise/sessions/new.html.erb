@@ -1,3 +1,15 @@
+<div class="d-flex align-items-center">
+
+
+<%= render "components/landing"%>
+
+
+
+<div class="d-flex d-flex align-items-center justify-content-center regista-div flex-column">
+
+<a class="arrow align-self-start ms-2 p-2" href="/"><i class="fa-solid fa-arrow-right display-6" style="color: #ffffff;"></i></a>
+
+<div class="glasscard d-flex flex-column">
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -12,9 +24,14 @@
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+  <div class="form-actions btn-red">
+    <%= f.button :submit, "Log in"%>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
+ </div>
+ </div>
+
+ </div>
