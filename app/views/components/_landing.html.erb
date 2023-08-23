@@ -1,13 +1,16 @@
 
 <div class="d-flex align-items-center justify-content-center flex-column px-5 ">
 
-  <div class="landing-information d-flex flex-column", style="width:560px">
-    <div class="d-flex align-items-center"><h1>Rent the </h1> <span class="ms-3 animate__animated animate__slideInDown">SOFA</span> </div>
-    <p>
-      Schedule time in LW stuff during your time as a student
-      and never lose time again 🤩
+  <div class="landing-information d-flex flex-column" data-controller="text" style="width:560px">
+    <div class="d-flex align-items-center "><h1 >Rent the </h1> <span id="span"class="ms-3 ">SOFA</span> </div>
+    <p >
+
+      The possibilities are endless now 🤩
+      You can rent Antonio's favorite chair,🪑
+      maybe even a seat in the yoga hall, 🧘🏾
+      or even Miguel to come climbing with you 😍
     </p>
-    <%= render "components/gradient-btn" %>
+    <%= render "components/gradient-btn" , text: "Start now!", path:new_user_registration_path %>
   </div>
 
 </div>
