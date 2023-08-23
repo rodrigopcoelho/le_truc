@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     if current_user.admin
       @products = Product.all
     else
-      errors.add 
+      errors.add
     end
   end
 
@@ -28,6 +28,19 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @products.update(product_params)
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
