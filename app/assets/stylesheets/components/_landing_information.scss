@@ -17,18 +17,24 @@
   }
 }
 
-.div-img-land{
-
-  background-image: url(capaland.png);
+.div-land{
   width: 1030px;
+  height:100vh;
+
+}
+
+.div-img-land{
+  margin-top: 40px;
+  background-image: url(capaland.png);
   height:100vh;
   background-size: contain;
   background-repeat: no-repeat;
 
-
 }
 
-.padding-land-text{
 
+
+
+.padding-land-text{
   padding-bottom: 161px;
 }
