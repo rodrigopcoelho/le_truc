@@ -1,26 +1,27 @@
 <div class="d-flex justify-content-between px-3 py-2">
+
   <div class="d-flex justify-content-between logo-letruc">
     <%= image_tag "logo.svg", alt: "Le Wagon", width: 65 %>
     <h1>Le Truc</h1>
   </div>
 
   <div class="d-flex justify-content-between gap-2 py-2">
-    <button class="btn-signup">Sign up</button>
-    <button class="btn-signin">Sign in</button>
+    <%= link_to "Sign up", new_user_registration_path, class:"d-flex align-items-center btn-signup text-decoration-none" %>
+    <%= link_to "Sign in", user_session_path, class:"d-flex align-items-center btn-signin text-decoration-none " %>
   </div>
+
 </div>
 
-<section class="d-flex">
-  <div class="landing-information", style="width:560px">
-    <h1>Rent the <span>SOFA</span></h1>
-    <p>
-      Schedule time in LW stuff during your time as a student
-      and never lose time again 🤩
-    </p>
-    <%= render "components/gradient-btn" %>
+<div class="d-flex align-items-center ">
+  <div class="padding-land-text">
+  <%= render "components/landing"%>
   </div>
 
-  <div class="landing-image">
-    <%= image_tag "image-details.svg", alt: "Le Wagon", width: "1000px", class:"landing-image" %>
+
+  <div class=" div-land">
+    <div class=" div-img-land">
+    </div>
   </div>
-</section>
+
+
+</div>

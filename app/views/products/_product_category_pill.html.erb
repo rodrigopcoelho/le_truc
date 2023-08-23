@@ -1,0 +1,16 @@
+<% if product.category == 'leisure' %>
+  <div class="pill-category">
+    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+    <p>Leisure</p>
+  </div>
+<% elsif product.category == 'lunch' %>
+  <div class="pill-category">
+    <i class="fa-solid fa-utensils pill-category"></i>
+    <p>Lunch</p>
+  </div>
+<% else %>
+  <div class="pill-category">
+    <i class="fa-solid fa-laptop-code pill-category"></i>
+    <p>Work</p>
+  </div>
+<% end %>

@@ -1,20 +1,52 @@
-<div>
+<div class="main-container-show">
 
-  <div class="left-container">
+  <div class="header-product-show">
+    <h1><%= @product.name %></h1>
 
-    <div class="image-product">
+    <%= render 'product_category_pill',  product: @product %>
+  </div>
+
+  <div class="description-product-container">
+
+    <div class="left-container">
+
+      <div class="image-product cont">
+        <%= cl_image_tag @product.photo.key, crop: :fill %>
+      </div>
+
+      <div class="info-product cont">
+        <p>
+          <%= @product.description %>
+        </p>
+      </div>
+
     </div>
 
-    <div class="info-product">
+    <div class="right-container">
+
+      <div class="nice-phrase cont">
+        <h2>Use the <%= @product.name %> as you want!</h2>
+      </div>
+
+      <div class="schedule-form cont">
+        <p class="product-price"><%= @product.price %> 💰</p>
+        <form action="">
+          <input data-controller="datepicker" type="string" name="day-rent" id="" class="form-control d-none">
+          <input type="submit" value="Schedule 📆" class="btn-schedule-form">
+        </form>
+        <%# <%= simple_form_for @product do |f| %>
+          <%#= f.input :opening_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } }
+          %>
+        <%# end %>
+      </div>
+
     </div>
 
   </div>
 
-  <div class="right-container">
-
-    <div class="schedule-form">
-    </div>
-
-  </div>
+  <%# <div class="reviews-container cont">
+  </div> %>
 
 </div>

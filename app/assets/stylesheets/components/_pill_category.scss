@@ -1,0 +1,18 @@
+.pill-category {
+  padding: 6px;
+  background: $red;
+  color: white;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0;
+    margin-left: 3px;
+  }
+
+  i {
+    padding: 0;
+  }
+}
