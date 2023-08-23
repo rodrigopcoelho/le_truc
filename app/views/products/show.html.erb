@@ -27,10 +27,15 @@
       <div class="schedule-form cont">
         <p><%= @product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
         <form action="">
-          <input type="date" name="day-rent" id="" class="form-control">
-          <input type="datetime" name="time-rent" id="" placeholder="ex: 9am to 10am" class="form-control">
-          <input type="submit" value="Schedule!" class="btn">
+          <input data-controller="datepicker" type="string" name="day-rent" id="" class="form-control d-none">
+          <input type="submit" value="Schedule!" class="btn btn-secondary btn-lg btn-block">
         </form>
+        <%# <%= simple_form_for @product do |f| %>
+          <%#= f.input :opening_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } }
+          %>
+        <%# end %>
       </div>
 
     </div>

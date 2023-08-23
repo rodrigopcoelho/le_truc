@@ -32,7 +32,7 @@ end
 
 # def description_gen(product_name)
 #   OpenAI.configure do |config|
-#     config.access_token = 'k-De9Wdi9Onkh1P4S9klitT3BlbkFJWCjwPV7PazrAJ4HoB2fK'
+#     config.access_token = ENV.fetch("OPENAI_ACCESS_TOKEN")
 #   end
 
 #   client = OpenAI::Client.new
@@ -68,7 +68,6 @@ img_json.each do |img|
     name: prod_cat_file[0],
     category: choose_cat(prod_cat_file[1]),
     description: Faker::Lorem.sentence(word_count: 20),
-    # description: description_gen(prod_cat_file[0]),
     price: rand(1..5),
     user: User.first
   )
@@ -76,3 +75,7 @@ img_json.each do |img|
   product.photo.attach(io: img_file, filename: "#{prod_cat_file[2]}.#{img_format}", content_type: "image/#{img_format}")
   product.save
 end
+
+# Product.all.each do |product|
+#   product.update(description: description_gen(product.name))
+# end
