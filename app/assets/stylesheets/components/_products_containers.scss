@@ -37,4 +37,13 @@
 
 .dashboard-products-container {
   display: flex;
+  h5 {
+    flex-grow: 1;
+    font-family:'Poppins', sans-serif;
+    font-weight: 600;
+  }
+}
+
+.dashboard-user-container {
+  margin-bottom: 100px;
 }

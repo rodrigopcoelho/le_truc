@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     if current_user.admin
       @products = Product.all
     else
-
+      errors.add 
     end
   end
 

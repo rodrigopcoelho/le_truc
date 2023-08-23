@@ -46,9 +46,25 @@
   align-items: center;
 }
 
-// .card-footer-color {
-//   background-color: rgb(104, 148, 92);
-// }
+
+// Dashboard Product-Cards
+.dashboard-product-content {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  gap: 20px;
+}
+
+.dashboard-product-details {
+  display: flex;
+  
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+}
+
 
 // Icons Cards
 .icon-card {
