@@ -2,6 +2,13 @@ require "open-uri"
 require "json"
 require "openai"
 
+## clean DB
+
+Product.destroy_all
+User.destroy_all
+
+User.create(email: "admin@lewagon.pt", password: "123456", admin: true, username: "admin")
+
 # METHODS
 
 def treat_name(raw_name)
