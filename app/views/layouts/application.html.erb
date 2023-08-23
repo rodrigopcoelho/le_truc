@@ -18,8 +18,13 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
+  <% if controller_name != 'pages' && controller_name != 'sessions' && controller_name != 'registrations' %>
+  <%= render "components/navbar" %>
+<% end %>
 
     <%= yield %>
+
+    <%= render "components/footer" %>
 
   </body>
 </html>
