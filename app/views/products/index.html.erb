@@ -19,6 +19,7 @@
       </div>
   </div>
 
+<<<<<<< HEAD
   <div class="container-grid">
     <div class="row-grid">
       <% @products.each do |product| %>
@@ -27,16 +28,36 @@
             <%= link_to product_path(product.id) do %>
               <%= cl_image_tag product.photo.key, crop: :fill %>
             <% end %>
+=======
+  <div class="product-card-container">
+    <% @products.each do |product| %>
+
+      <%= link_to product_path(product.id) do %>
+        <div class="product-card">
+
+          <div class="product-content">
+            <%= image_tag "https://images.unsplash.com/photo-1515773512591-dfaf9e052325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80" %>
+
+>>>>>>> 1d28f6a08c2176ff43940e3c1ae749d22bb88661
             <div class="product-card-body">
               <h5><%= product.name %></h5>
               <div class="card-details">
                 <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
+<<<<<<< HEAD
                 <%= link_to icon('fas', 'cart-plus'), products_path, class:"btn-rent" %>
+=======
+                <%= link_to "Rent!", products_path, class:"btn-rent" %>
+>>>>>>> 1d28f6a08c2176ff43940e3c1ae749d22bb88661
               </div>
             </div>
+
           </div>
         </div>
       <% end %>
+<<<<<<< HEAD
     </div>
+=======
+    <% end %>
+>>>>>>> 1d28f6a08c2176ff43940e3c1ae749d22bb88661
   </div>
 </div>
