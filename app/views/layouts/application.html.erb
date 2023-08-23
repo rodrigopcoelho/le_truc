@@ -10,6 +10,7 @@
     <%= javascript_importmap_tags %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -18,9 +19,9 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-  <% if controller_name != 'pages' && controller_name != 'sessions' && controller_name != 'registrations' %>
-  <%= render "components/navbar" %>
-<% end %>
+    <% if controller_name != 'pages' && controller_name != 'sessions' && controller_name != 'registrations' %>
+      <%= render "components/navbar" %>
+    <% end %>
 
     <%= yield %>
 
