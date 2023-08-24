@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :products
   has_many :bookings
 
-  validates tokens_balance 
+  validates :tokens_balance, numericality: { greater_than_or_equal_to: 0 }
 end

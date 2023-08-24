@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
 
     if tokens_user >= product_price
       @booking.save
+      # The below thing works? Because I'm saving the tokens of the user in a variable and not changing directly the tokens of the user (probably its better with an UPDATE method)
       @tokens_user -= product_price
       # the below line is needed to save the new balance tokens in the user?
       current_user.save
@@ -20,8 +21,11 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    if @booking.destroy
+if @booking.destroy
+      # The below thing works? Because I'm saving the tokens of the user in a variable and not changing directly the tokens of the user (probably its better with an UPDATE method)
       @tokens_user += @product_price
+      # the below line is needed to save the new balance tokens in the user?
+      current_user.save
     else
       flash.alert("There is a problem with your request, try again later.")
     end
