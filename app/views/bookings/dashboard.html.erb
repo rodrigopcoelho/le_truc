@@ -1,8 +1,15 @@
 <div class="dashboard-all">
 
-  <div>
-    <%= render "components/dashboard", objects: @bookings %>
-  </div>
+  <% if Booking.where(user_id: current_user.id).empty? %>
+    <div>
+      <h2>You don't have bookings yet!</h2>
+      <%= link_to 'Make a Booking', products_path, class:"btn-rent" %>
+    </div>
+  <% else %>
+    <div>
+      <%= render "components/dashboard", objects: @bookings %>
+    </div>
+  <% end %>
 
   <div class="dashboard-user-container">
     <%= render "components/profile_dashboard" %>
