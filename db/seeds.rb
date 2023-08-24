@@ -83,6 +83,26 @@ img_json.each do |img|
   product.save
 end
 
+# SEED Slots
+products = Product.all
+
+hours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+
+products.each do |product|
+10.times do |i|
+  start_time = hours[i]
+  end_time = hours[i +1]
+  availability = true
+
+  Slot.create!(
+    start_time: start_time,
+    end_time: end_time,
+    availability: availability,
+    product: product
+  )
+end
+end
+
 # Product.all.each do |product|
 #   product.update(description: description_gen(product.name))
 # end
