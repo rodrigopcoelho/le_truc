@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/homepage' => "products#index", :as => :user_root
   resources :products
   resources :bookings
-  
+
   get "dashboard_admin", to: "products#dashboard"
-  get "dashboard_user", to: "bookings#dashboard "
+  get "dashboard_user", to: "bookings#dashboard"
 end
