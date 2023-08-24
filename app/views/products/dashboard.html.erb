@@ -3,73 +3,17 @@
   <div class="dashboard-all">
 
     <div>
-      <div class="dashboard-products-container">
-        <h5>Products</h5>
-        <%= link_to "Add a product", new_product_path, class:"btn btn-add" %>
-      </div>
-      <% @products.each do |product| %>
-        <div class="dashboard-product-card">
-          <div>
-            <%= cl_image_tag product.photo.key, height: 100, crop: :fill %>
-          </div>
-          <div class="dashboard-product-card-content">
-            <div class="dashboard-product-card-details">
-              <h5><%= product.name %></h5>
-              <p><%= product.price %>💰</p>
-            </div>
-            <div class="dashboard-product-card-buttons">
-              <%= link_to icon('fas', 'pen-to-square'), edit_product_path(product.id), class:"btn-rent" %>
-              <%= link_to icon('fas', 'trash-can'), product_path(product.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render "components/dashboard", objects: @products %>
     </div>
 
     <div>
-      <div class="dashboard-products-container">
-        <h5>Products</h5>
-        <%= link_to "Add a product", new_product_path, class:"btn btn-red" %>
-      </div>
-      <% @products.each do |product| %>
-        <div class="dashboard-product-card">
-          <div>
-            <%= cl_image_tag product.photo.key, height: 100, crop: :fill %>
-          </div>
-          <div class="dashboard-product-card-content">
-            <div class="dashboard-product-card-details">
-              <h5><%= product.name %></h5>
-              <p><%= product.price %> 💰</p>
-            </div>
-            <div class="dashboard-product-card-buttons">
-              <%= link_to icon('fas', 'pen-to-square'), edit_product_path(product.id), class:"btn-rent" %>
-              <%= link_to icon('fas', 'trash-can'), product_path(product.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render "components/dashboard", objects: @products %>
     </div>
 
   </div>
 
   <div class="dashboard-user-container">
-    <%# necessario alterar para avatares especificos %>
-    <%= image_tag "https://res.cloudinary.com/dfetf2wc4/image/upload/v1692791191/avatar_margarida_etq8dy.png" %>
-    <div class="dashboard-username-edit">
-      <p class="admin">Admin</p>
-      <%# mudar para link_to do %>
-      <%= link_to icon('fas', 'pen-to-square'), products_path, class:"btn-rent" %>
-    </div>
-
-    <div class="dashboard-user-details">
-      <h3><%= current_user.username %></h3>
-      <p><%= current_user.email %></p>
-    </div>
-    <form action="">
-      <input data-controller="datepicker" type="string" name="day-rent" class="form-control d-none">
-    </form>
+    <%= render "components/profile_dashboard" %>
   </div>
-
-
 
 </div>

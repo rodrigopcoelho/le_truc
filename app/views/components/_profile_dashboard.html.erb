@@ -1,0 +1,22 @@
+<div>
+  <%# necessario alterar para avatares especificos %>
+  <%= image_tag "https://res.cloudinary.com/dfetf2wc4/image/upload/v1692791191/avatar_margarida_etq8dy.png" %>
+  <div class="dashboard-username-edit">
+    <% if  current_user.admin %>
+      <p class="admin">Admin</p>
+    <% else %>
+      <p class="admin">User</p>
+    <% end %>
+    <%# mudar para link_to do %>
+    <%= link_to icon('fas', 'pen-to-square'), products_path, class:"btn-rent" %>
+  </div>
+
+  <div class="dashboard-user-details">
+    <h3><%= current_user.username %></h3>
+    <p><%= current_user.email %></p>
+  </div>
+  
+  <form action="">
+    <input data-controller="datepicker" type="string" name="day-rent" class="form-control d-none">
+  </form>
+</div>
