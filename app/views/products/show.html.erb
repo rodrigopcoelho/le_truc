@@ -35,19 +35,19 @@
         <%= simple_form_for @booking do |f| %>
           <div class="d-flex flex-column px-5 mb-2">
               <%= f.association :slot,
-                  as: :check_boxes,
-                  input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton" }, inner_text: "Hours"  },
-                  item_wrapper_class: 'tag-item',
-                  collection: Slot.where(product_id: @product),
-                  label_method: :start_time,
-                  label:"Hours"
-                  %>
+                as: :check_boxes,
+                input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton" }, inner_text: "Hours"  },
+                item_wrapper_class: 'tag-item',
+                collection: Slot.where(product_id: @product),
+                label_method: :start_time,
+                label:"Hours"
+              %>
           </div>
 
           <div class="d-flex justify-content-end mt-4">
             <%= f.submit "Submit",
-                  class: "btn btn-light ",
-                  data: { toggle_target: "bookButton"}
+              class: "btn btn-light ",
+              data: { toggle_target: "bookButton"}
             %>
           </div>
         <% end %>
