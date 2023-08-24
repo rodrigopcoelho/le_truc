@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get '/homepage' => "products#index", :as => :user_root
   resources :products
+
+  resources :bookings
   get "dashboard", to: "products#dashboard"
 end
