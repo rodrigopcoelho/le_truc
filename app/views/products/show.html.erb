@@ -29,7 +29,7 @@
       </div>
 
       <div class="schedule-form cont">
-        <p class="product-price"><%= @product.price %> 💰</p>
+        <p class="product-price"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
       <%= render "components/slots", hours: "9"%>
         <%# <%= simple_form_for @product do |f| %>
           <%#= f.input :opening_date,

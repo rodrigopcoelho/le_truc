@@ -4,6 +4,6 @@ import flatpickr from "flatpickr"; // You need to import this to use new flatpic
 // Connects to data-controller="datepicker"
 export default class extends Controller {
   connect() {
-    flatpickr(this.element, {inline:true, enableTime: true})
+    flatpickr(this.element, {inline:true})
   }
 }
