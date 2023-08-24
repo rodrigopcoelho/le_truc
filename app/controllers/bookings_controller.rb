@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     redirect_to dashboard_user_path
   end
 
-  def dashboard_user
+  def dashboard
     @bookings = Booking.where(user_id: current_user.id)
   end
 

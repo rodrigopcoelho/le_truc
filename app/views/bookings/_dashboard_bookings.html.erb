@@ -1,0 +1,26 @@
+<div>
+  <div class="dashboard-products-container">
+    <h5>Bookings</h5>
+    <%= link_to "Add", products_path, class:"btn btn-add" %>
+  </div>
+  <% objects.each do |object| %>
+    <div class="dashboard-product-card">
+      <div>
+        <%= cl_image_tag object.slot.product.photo.key, height: 200, crop: :fill %>
+      </div>
+      <div class="dashboard-product-card-content">
+        <div class="dashboard-product-card-details">
+          <h5><%= object.slot.product.name %></h5>
+          <p><%= object.slot.product.price %>💰</p>
+          <% if current_user.admin %>
+            <p><strong>Owner:</strong> @<%= object.user.username %></p>
+          <% end %>
+          <p>From <%= object.slot.start_time %> to <%= object.slot.end_time %></p>
+        </div>
+        <div class="dashboard-product-card-buttons">
+          <%= link_to icon('fas', 'trash-can'), booking_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

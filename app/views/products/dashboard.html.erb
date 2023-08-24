@@ -3,20 +3,20 @@
   <div class="dashboard-all">
 
     <div>
-      <%= render "components/dashboard", objects: @products %>
+      <%= render "dashboard_products", objects: @products %>
     </div>
 
     <div>
-      <%# @bookings = Booking.all %>
-      <%# if @bookings.empty? %>
-        <%# <div>
-          <h2>There is no bookings yet...</h2>
-        </div> %>
-      <%# else %>
-        <%#= render "components/dashboard", objects: @bookings %>
-      <%# end %>
+      <%# VER LOGICA DO RENDER DOS PRODUCTS E OS BOOKINGS %>
 
-      <%= render "components/dashboard", objects: @products %>
+      <% @bookings = Booking.all %>
+      <% if @bookings.empty? %>
+        <div>
+          <h2>There is no bookings yet...</h2>
+        </div>
+      <% else %>
+        <%= render "bookings/dashboard_bookings", objects: @bookings %>
+      <% end %>
     </div>
 
   </div>
