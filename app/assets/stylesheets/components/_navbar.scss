@@ -62,6 +62,37 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 font-size: 16px;
 }
 
-.search-form {
-  margin-right: 90px;
+// .search-form {
+// }
+
+.container-dropdown-tokens {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tokens-show {
+
+  margin: 0 80px 0 0;
+  display: flex;
+  align-items: center;
+
+  p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 5px 20px;
+    height: 45px;
+    border-radius: 50px;
+    background: #E53B33;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    color: whitesmoke;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.form-div-navbar {
+  padding-left: 55px;
+  padding-right: 0;
 }
