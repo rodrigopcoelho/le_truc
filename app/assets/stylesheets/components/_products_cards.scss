@@ -89,7 +89,7 @@
   width: 80px;
   height: 80px;
   border-radius: 5px;
-  background-color: #e48883;
+  background-color: $light-red;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   font-family:'Inter', sans-serif;
 
@@ -99,7 +99,7 @@
 
 }
 
-.activer {
+.active {
   background-color: $red;
 }
 
