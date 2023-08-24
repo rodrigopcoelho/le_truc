@@ -3,19 +3,22 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @products = @products.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show
   end
 
   def dashboard
-    # raise
-    # if current_user.admin
-    #   @products = Product.all
-    # else
-    #   errors.add
-    # end
-    @products = Product.all if current_user.admin
+    if current_user.admin
+      @products = Product.all
+    else
+      redirect_to root_path, notice: "you cant go here"
+    end
+    # @products = Product.all if current_user.admin
   end
 
   def new
@@ -23,7 +26,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # raise
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
