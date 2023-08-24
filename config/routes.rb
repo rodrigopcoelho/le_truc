@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/homepage' => "products#index", :as => :user_root
   resources :products
   get "dashboard", to: "products#dashboard"
+  get "/404", to: "errors#not_found"
 end

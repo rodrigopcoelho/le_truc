@@ -10,11 +10,18 @@
 
     <div class="collapse navbar-collapse align-items-center justify-content-between" id="navbarSupportedContent">
       <h1>le truc </h1>
-
-      <form class="d-flex search-input justify-content-between align-items-center " role="search">
-        <input class="form-control ms-2 border-0 bg-transparent w-50 h-100 rounded-pill shadow-none" type="search" placeholder="ping pong" aria-label="Search">
-       <button class="btn btn-search-red me-3 d-flex justify-content-center align-items-center" type="submit"> <%= image_tag "search.svg", alt: "search icon"%></button>
-      </form>
+      <div class="row justify-content-center">
+        <div>
+          <%= form_with url: products_path, method: :get, class: "d-flex search-input justify-content-between align-items-center search-form" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control ms-2 border-0 bg-transparent w-50 h-100 rounded-pill shadow-none",
+              placeholder: "Ping Pong"
+            %>
+            <%= image_submit_tag "search.svg", name: "", class: "btn btn-search-red me-3 d-flex justify-content-center align-items-center"%>
+          <% end %>
+        </div>
+      </div>
 
       <div class="user-back d-flex justify-content-center align-items-center">
         <div class="dropdown ">
