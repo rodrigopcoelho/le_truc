@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   get '/homepage' => "products#index", :as => :user_root
   resources :products
+  resources :bookings
+  
   get "dashboard_admin", to: "products#dashboard"
   get "dashboard_user", to: "bookings#dashboard "
 end
