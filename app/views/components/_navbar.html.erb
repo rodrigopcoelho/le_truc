@@ -36,7 +36,11 @@
               <i class="fa-solid fa-bars ms-1 treebars" style="color: #444444;"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %></li>
+              <% if current_user.admin %>
+                <li><%= link_to "Dashboard", dashboard_admin_path, class: "dropdown-item" %></li>
+              <% else %>
+                <li><%= link_to "Dashboard", dashboard_user_path, class: "dropdown-item" %></li>
+              <% end %>
               <%# <li><a class="dropdown-item" href="#">All products</a></li> %>
               <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
             </ul>

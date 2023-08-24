@@ -16,9 +16,8 @@ class ProductsController < ApplicationController
     if current_user.admin
       @products = Product.all
     else
-      redirect_to root_path, notice: "you cant go here"
+      redirect_to root_path, notice: "You can't go here"
     end
-    # @products = Product.all if current_user.admin
   end
 
   def new
