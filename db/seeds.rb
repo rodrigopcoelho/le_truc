@@ -4,6 +4,7 @@ require "openai"
 
 ## clean DB
 
+Slot.destroy_all
 Product.destroy_all
 User.destroy_all
 
@@ -89,9 +90,10 @@ products = Product.all
 hours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
 products.each do |product|
-10.times do |i|
-  start_time = hours[i]
-  end_time = hours[i +1]
+  hours.each_with_index do | hour , i |
+  break if i == hours.length - 1
+  start_time = hour
+  end_time = hours[hours.find_index(hour) + 1]
   availability = true
 
   Slot.create!(

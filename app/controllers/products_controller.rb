@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def dashboard
