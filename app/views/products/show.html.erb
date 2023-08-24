@@ -44,29 +44,20 @@
                   %>
           </div>
 
-        <div class="d-flex justify-content-end mt-4">
-          <%= f.submit "Submit",
-                class: "btn btn-light ",
-                data: { toggle_target: "bookButton"}%>
+          <div class="d-flex justify-content-end mt-4">
+            <%= f.submit "Submit",
+                  class: "btn btn-light ",
+                  data: { toggle_target: "bookButton"}
+            %>
+          </div>
+        <% end %>
 
+        <div class="schedule-form cont">
+          <p class="product-price"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
+          <%= render "components/slots", hours: "9"%>
         </div>
-          <% end %>
 
-      <div class="schedule-form cont">
-        <p class="product-price"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
-      <%= render "components/slots", hours: "9"%>
-        <%# <%= simple_form_for @product do |f| %>
-          <%#= f.input :opening_date,
-              as: :string,
-              input_html: { data: { controller: "datepicker" } }
-          %>
-        <%# end %>
       </div>
-
     </div>
   </div>
-
-
-
-
 </div>
