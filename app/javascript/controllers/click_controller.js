@@ -10,12 +10,16 @@ export default class extends Controller {
       let params = new URLSearchParams(document.location.search);
       let query = params.get("query");
       let active = document.getElementById(query);
-      active.classList.add("active");
+      if (active) {
+        active.classList.add("active");
+        active.value = ""
+      }
     } else
     {
       const all = document.getElementById("all");
       all.classList.add("active");
     }
+    document.getElementById("query").value = ""
   }
 
 }
