@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :products
   has_many :bookings
+
+  validates :tokens_balance, numericality: { greater_than_or_equal_to: 0 }
 end

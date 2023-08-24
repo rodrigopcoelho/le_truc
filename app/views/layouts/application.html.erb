@@ -22,10 +22,13 @@
     <% if controller_name != 'pages' && controller_name != 'sessions' && controller_name != 'registrations' %>
       <%= render "components/navbar" %>
     <% end %>
+    <%= render "components/flashes" %>
 
     <%= yield %>
 
-    <%= render "components/footer" %>
+    <% if controller_name != 'pages' && controller_name != 'sessions' && controller_name != 'registrations' %>
+      <%= render "components/footer" %>
+    <% end %>
 
   </body>
 </html>

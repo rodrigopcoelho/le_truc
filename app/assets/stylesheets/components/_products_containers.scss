@@ -31,15 +31,17 @@
 
 // Dashboard
 .dashboard-container {
-  width: 700px;
-  margin: 100px auto;
+  display: flex;
 }
 
 .dashboard-user-container {
   align-items: center;
   margin-bottom: 100px;
-  display: flex;
+  text-align: center;
   gap: 20px;
+  position: sticky;
+  position: -webkit-sticky; /* Safari */
+  top: 0px;
 
   h3 {
     margin-bottom: 10px;
@@ -52,24 +54,32 @@
     font-family: 'Inter', sans-serif;
   }
 
+
   img {
     border-radius: 50%;
     background-color: $white;
-    width: 25%;
+    width: 120px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
 }
 
+
 .dashboard-products-container {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   margin-bottom: 20px;
 
   h5 {
-    flex-grow: 1;
     font-family:'Poppins', sans-serif;
     font-weight: 600;
     margin: 0;
     color: $red;
   }
+}
+
+.dashboard-all {
+  display: flex;
+  gap: 50px;
+  flex-grow: 1;
 }
