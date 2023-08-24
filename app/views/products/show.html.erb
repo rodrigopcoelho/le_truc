@@ -30,7 +30,18 @@
 
       <div class="schedule-form cont">
         <p class="product-price"><%= @product.price %> 💰</p>
-      <%= render "components/slots", hours: "9"%>
+        <% slots = Slot.where(product_id: @product) %>
+        <% slots.each do |slot| %>
+        <div class="d-flex flex-column px-5 mb-2">
+        <% if slot.start_time == 9  %>
+          <p class="fw-bold">Morning</p>
+        <%end%>
+        <%if slot.start_time == 12  %>
+          <p class="fw-bold mt-2">Afternoon</p>
+        <%end%>
+        <%= render "components/slots", hours: "#{slot.start_time} #{slot.start_time >= 12 ? "pm" : "am"} - #{slot.end_time} #{slot.end_time >= 12 ? "pm" : "am"}"%>
+        </div>
+        <%end%>
         <%# <%= simple_form_for @product do |f| %>
           <%#= f.input :opening_date,
               as: :string,
