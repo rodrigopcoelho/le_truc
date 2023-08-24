@@ -4,8 +4,8 @@
 
   h1 {
     font-family: 'Amaranth', sans-serif;
-    font-size: 80px;
-    padding-bottom: 40px;
+    font-size: 120px;
+    padding-bottom: 30px;
   }
 
   h1 span {
@@ -15,26 +15,57 @@
     -webkit-text-fill-color: transparent;
     color: black;
   }
+
+  p {
+    font-size: 28px;
+  }
 }
 
 .div-land{
   width: 1030px;
   height:100vh;
-
+  width: 100vw;
 }
 
 .div-img-land{
-  margin-top: 40px;
   background-image: url(capaland.png);
-  height:100vh;
-  background-size: contain;
+  height: 100vh;
+  // background-size: contain;
   background-repeat: no-repeat;
-
+  margin-top: 90px;
 }
-
-
-
 
 .padding-land-text{
   padding-bottom: 161px;
+}
+
+// MEDIAS HERE
+
+@media (max-width: 1600px) {
+  .div-img-land {
+    background-size: contain;
+  }
+
+  .landing-information {
+    padding: 100px;
+    gap: 10px;
+
+    h1 {
+      font-family: 'Amaranth', sans-serif;
+      font-size: 70px;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .div-img-land{
+    background-image: url(capaland.png);
+    height: 100vh;
+    // background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 115px;
+  }
 }
