@@ -7,7 +7,16 @@
     </div>
 
     <div>
-      <%= render "components/dashboard", objects: @products %>
+      <%# @bookings = Booking.all %>
+      <%# if @bookings.empty? %>
+        <%# <div>
+          <h2>There is no bookings yet...</h2>
+        </div> %>
+      <%# else %>
+        <%#= render "components/dashboard", objects: @bookings %>
+      <%# end %>
+
+      <%= render "components/dashboard", objects: @bookings %>
     </div>
 
   </div>

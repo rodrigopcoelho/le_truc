@@ -3,7 +3,7 @@
   <% if Booking.where(user_id: current_user.id).empty? %>
     <div>
       <h2>You don't have bookings yet!</h2>
-      <%= link_to 'Make a Booking', products_path, class:"btn-rent" %>
+      <%= link_to 'Make a Booking', products_path, class:"btn btn-secondary" %>
     </div>
   <% else %>
     <div>
