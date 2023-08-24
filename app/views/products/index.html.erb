@@ -1,30 +1,30 @@
 <div class="index-container">
 <h6>Browse by category</h6>
-  <div class="icons-container">
+  <div class="icons-container" data-controller="click">
 
     <%= link_to products_path, class:"category-link" do %>
-      <div class="icon-card activer">
+      <div class="icon-card" id="all">
         <i class="fa-solid fa-border-all fa-2xl"></i>
         <p>All</p>
       </div>
     <% end %>
 
     <%= link_to products_path(query: "leisure"), class:"category-link" do %>
-      <div class="icon-card">
+      <div class="icon-card" id="leisure">
         <i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i>
         <p>Leisure</p>
       </div>
     <% end %>
 
     <%= link_to products_path(query: "lunch"), class:"category-link" do %>
-      <div class="icon-card">
+      <div class="icon-card" id="lunch">
         <i class="fa-solid fa-utensils fa-2xl"></i>
         <p>Lunch</p>
       </div>
     <% end %>
 
     <%= link_to products_path(query: "work"), class:"category-link" do %>
-      <div class="icon-card">
+      <div class="icon-card" id="work">
         <i class="fa-solid fa-laptop-code fa-2xl"></i>
         <p>Work</p>
       </div>
@@ -42,8 +42,9 @@
             <% end %>
             <div class="product-card-body">
               <h5><%= product.name %></h5>
+              <p class="product-description-text"><%= product.description %></p>
               <div class="product-card-details">
-                <p><%= product.price %> 💰</p>
+                <p class="product-price"><%= product.price %> <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
                 <%= link_to icon('fas', 'calendar-day'), products_path, class:"btn-rent" %>
               </div>
             </div>

@@ -103,3 +103,18 @@
     font-size: 16px;
   }
 }
+
+.btn-add {
+  background-color: $red;
+  color: #FFF;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
