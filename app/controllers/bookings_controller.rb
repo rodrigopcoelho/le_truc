@@ -22,9 +22,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    # Redirect after to the dashboard user
-    # redirect_to dashboard_user_path(current_user)
-    redirect_to products_path
+    redirect_to dashboard_user_path
   end
 
   private
