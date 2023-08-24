@@ -5,30 +5,18 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user.id
-    # tokens_user = current_user.tokens_balance
-    # product_price = @booking.slot.product.price
-
-    if tokens_user >= product_price
-      @booking.save
-      # The below thing works? Because I'm saving the tokens of the user in a variable and not changing directly the tokens of the user (probably its better with an UPDATE method)
-      @tokens_user -= product_price
-      # the below line is needed to save the new balance tokens in the user?
-      current_user.save
+    if @booking.save
+      redirect_to product_path(@booking.slot.product), notice: "Booking done!"
     else
-      flash.alert("You need #{product_price - tokens_user} to make the booking")
+      render "products/show"
     end
   end
 
   def destroy
     @booking.destroy
-    if @booking.destroy
-      # The below thing works? Because I'm saving the tokens of the user in a variable and not changing directly the tokens of the user (probably its better with an UPDATE method)
-      @tokens_user += @product_price
-      # the below line is needed to save the new balance tokens in the user?
-      current_user.save
-    else
-      flash.alert("There is a problem with your request, try again later.")
-    end
+    # Redirect after to the dashboard user
+    # redirect_to dashboard_user_path(current_user)
+    redirect_to products_path
   end
 
   private
