@@ -1,20 +1,24 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @products = @products.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show
   end
 
   def dashboard
-    # raise
     if current_user.admin
       @products = Product.all
     else
-      errors.add 
+      redirect_to root_path, notice: "you cant go here"
     end
+    # @products = Product.all if current_user.admin
   end
 
   def new
@@ -23,11 +27,25 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
-      redirect_to dashboard_path
+      redirect_to product_path(@product)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @product.update(product_params)
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to dashboard_path, status: :see_other
   end
 
   private

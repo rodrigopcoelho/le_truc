@@ -1,37 +1,50 @@
 <div class="index-container">
 <h6>Browse by category</h6>
   <div class="icons-container">
+
+    <%= link_to products_path, class:"category-link" do %>
       <div class="icon-card activer">
         <i class="fa-solid fa-border-all fa-2xl"></i>
         <p>All</p>
       </div>
+    <% end %>
+
+    <%= link_to products_path(query: "leisure"), class:"category-link" do %>
       <div class="icon-card">
         <i class="fa-solid fa-table-tennis-paddle-ball fa-2xl"></i>
         <p>Leisure</p>
       </div>
+    <% end %>
+
+    <%= link_to products_path(query: "lunch"), class:"category-link" do %>
       <div class="icon-card">
         <i class="fa-solid fa-utensils fa-2xl"></i>
         <p>Lunch</p>
       </div>
+    <% end %>
+
+    <%= link_to products_path(query: "work"), class:"category-link" do %>
       <div class="icon-card">
         <i class="fa-solid fa-laptop-code fa-2xl"></i>
         <p>Work</p>
       </div>
+    <% end %>
+
   </div>
 
   <div class="container-grid">
     <div class="row-grid">
       <% @products.each do |product| %>
         <div class="col-grid">
-          <div class="product-content">
+          <div class="product-card-content">
             <%= link_to product_path(product.id) do %>
               <%= cl_image_tag product.photo.key, crop: :fill %>
             <% end %>
             <div class="product-card-body">
               <h5><%= product.name %></h5>
-              <div class="card-details">
-                <p><%= product.price %> <i class="fa-solid fa-coins fa-lg"></i></p>
-                <%= link_to icon('fas', 'cart-plus'), products_path, class:"btn-rent" %>
+              <div class="product-card-details">
+                <p><%= product.price %> 💰</p>
+                <%= link_to icon('fas', 'calendar-day'), products_path, class:"btn-rent" %>
               </div>
             </div>
 
