@@ -1,0 +1,23 @@
+<div>
+  <div class="dashboard-products-container">
+    <h5>Products</h5>
+    <%= link_to "Add", new_product_path, class:"btn btn-add" %>
+  </div>
+  <% objects.each do |object| %>
+    <div class="dashboard-product-card">
+      <div>
+        <%= cl_image_tag object.photo.key, height: 100, crop: :fill %>
+      </div>
+      <div class="dashboard-product-card-content">
+        <div class="dashboard-product-card-details">
+          <h5><%= object.name %></h5>
+          <p><%= object.price %>💰</p>
+        </div>
+        <div class="dashboard-product-card-buttons">
+          <%= link_to icon('fas', 'pen-to-square'), edit_product_path(object.id), class:"btn-rent" %>
+          <%= link_to icon('fas', 'trash-can'), product_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
