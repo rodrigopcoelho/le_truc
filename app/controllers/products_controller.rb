@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
   def show
     @booking = Booking.new
+    session[:product_id] = @product.id
   end
 
   def dashboard
