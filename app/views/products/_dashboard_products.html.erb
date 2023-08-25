@@ -11,7 +11,7 @@
       <div class="dashboard-product-card-content">
         <div class="dashboard-product-card-details">
           <h5><%= object.name %></h5>
-          <p><%= object.price %>💰</p>
+          <p class="product-price"><%= object.price %> <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
         </div>
         <div class="dashboard-product-card-buttons">
           <%= link_to icon('fas', 'pen-to-square'), edit_product_path(object.id), class:"btn-rent" %>
