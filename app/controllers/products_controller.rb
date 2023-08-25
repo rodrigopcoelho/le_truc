@@ -41,12 +41,12 @@ class ProductsController < ApplicationController
 
   def update
     @product.update(product_params)
-    redirect_to dashboard_path
+    redirect_to dashboard_admin_path
   end
 
   def destroy
     @product.destroy
-    redirect_to dashboard_path, status: :see_other
+    redirect_to dashboard_admin_path, status: :see_other
   end
 
   private
