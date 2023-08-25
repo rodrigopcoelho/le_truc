@@ -1,17 +1,17 @@
 <div>
   <div class="dashboard-products-container">
-    <h5>Products</h5>
+    <h5 class="h5-products">Products</h5>
     <%= link_to "Add", new_product_path, class:"btn btn-add" %>
   </div>
   <% objects.each do |object| %>
     <div class="dashboard-product-card">
       <div>
-        <%= cl_image_tag object.photo.key, height: 100, crop: :fill %>
+        <%= cl_image_tag object.photo.key, height: 200, crop: :fill %>
       </div>
       <div class="dashboard-product-card-content">
         <div class="dashboard-product-card-details">
           <h5><%= object.name %></h5>
-          <p><%= object.price %>💰</p>
+          <p class="product-price"><%= object.price %> <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
         </div>
         <div class="dashboard-product-card-buttons">
           <%= link_to icon('fas', 'pen-to-square'), edit_product_path(object.id), class:"btn-rent" %>

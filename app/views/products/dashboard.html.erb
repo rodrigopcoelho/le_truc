@@ -1,13 +1,12 @@
-<div class="dashboard-container m-5">
+<div class="dashboard-container">
 
   <div class="dashboard-all">
 
-    <div>
+    <div class="dashboard-boxes">
       <%= render "dashboard_products", objects: @products %>
     </div>
 
-    <div>
-      <%# VER LOGICA DO RENDER DOS PRODUCTS E OS BOOKINGS %>
+    <div class="dashboard-boxes">
 
       <% @bookings = Booking.all %>
       <% if @bookings.empty? %>
@@ -18,11 +17,12 @@
         <%= render "bookings/dashboard_bookings", objects: @bookings %>
       <% end %>
     </div>
+    
+    <div class="dashboard-user-container">
+      <%= render "components/profile_dashboard" %>
+    </div>
 
   </div>
 
-  <div class="dashboard-user-container">
-    <%= render "components/profile_dashboard" %>
-  </div>
 
 </div>
