@@ -20,7 +20,11 @@
           </div>
         </div>
         <div class="dashboard-product-card-buttons">
-          <%= link_to icon('fas', 'trash-can'), booking_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-bookings" %>
+          <% if  current_user.admin %>
+            <%= link_to icon('fas', 'trash-can'), dashboard_admin_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-bookings" %>
+          <% else %>
+            <%= link_to icon('fas', 'trash-can'), dashboard_user_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-bookings" %>
+          <% end %>
         </div>
       </div>
     </div>
