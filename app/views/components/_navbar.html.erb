@@ -35,7 +35,7 @@
             <a class="btn d-flex justify-content-center align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-bars ms-1 treebars" style="color: #444444;"></i>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end drop-margin-nav">
               <% if current_user.admin %>
                 <li><%= link_to "Dashboard", dashboard_admin_path, class: "dropdown-item" %></li>
               <% else %>
