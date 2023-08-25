@@ -32,18 +32,17 @@
 
         <p class="product-price d-flex justify-content-center mb-3"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
 
-        </div>
 
         <%= simple_form_for @booking do |f| %>
 
-
           <div class="d-flex flex-column px-5 mb-2">
              <%= f.error_notification %>
+
              <%= f.association :slot,
                 as: :check_boxes,
-                input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton" }  },
+                input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton"  }  },
                 item_wrapper_class: 'tag-item',
-                collection: Slot.where(product_id: @product),
+                collection: Slot.where(product: @product, availability:true ),
                 label_method: :start_time,
                 label:"Hours",
                 include_hidden: false
