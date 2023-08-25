@@ -6,6 +6,7 @@ require "openai"
 
 Slot.destroy_all
 Product.destroy_all
+Booking.destroy_all
 User.destroy_all
 
 User.create(email: "admin@lewagon.pt", password: "123456", admin: true, username: "admin")
