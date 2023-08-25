@@ -3,7 +3,7 @@
   <div class="header-product-show">
     <h1><%= @product.name %></h1>
 
-    <%= render 'product_category_pill',  product: @product %>
+    <%= render 'products/product_category_pill',  product: @product %>
   </div>
 
   <div class="description-product-container">
@@ -32,29 +32,33 @@
 
         <p class="product-price d-flex justify-content-center mb-3"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
 
+        </div>
 
         <%= simple_form_for @booking do |f| %>
-          <div class="d-flex flex-column px-5 mb-2 ">
 
+
+          <div class="d-flex flex-column px-5 mb-2">
+             <%= f.error_notification %>
              <%= f.association :slot,
                 as: :check_boxes,
                 input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton" }  },
                 item_wrapper_class: 'tag-item',
                 collection: Slot.where(product_id: @product),
                 label_method: :start_time,
-                value_method: :availability,
-                label:"Hours"
+                label:"Hours",
+                include_hidden: false
               %>
+              <p style="color:red;"><%= f.object.errors.full_messages.join(", ") if f.object.errors.any? && f.object.errors.attribute_names.first != :slot %></p>
+
           </div>
 
-          <div class="d-flex justify-content-end">
-            <%= f.submit "Submit",
+          <div class="d-flex justify-content-end mt-4">
+            <%= f.submit "Book Now!",
               class: "btn btn-light ",
               data: { toggle_target: "bookButton"}
             %>
           </div>
         <% end %>
-
       </div>
     </div>
   </div>

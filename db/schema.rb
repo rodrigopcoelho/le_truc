@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_084944) do
 
   create_table "slots", force: :cascade do |t|
     t.string "start_time"
-    t.boolean "availability", default: true
+    t.boolean "availability"
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -4,11 +4,13 @@ require "openai"
 
 ## clean DB
 
+Booking.destroy_all
 Slot.destroy_all
 Product.destroy_all
 User.destroy_all
 
 User.create(email: "admin@lewagon.pt", password: "123456", admin: true, username: "admin")
+User.create(email: "mags@letruc.pt", password: "123456", admin: false, username: "mags")
 
 # METHODS
 
@@ -87,19 +89,19 @@ end
 # SEED Slots
 products = Product.all
 
-hours = ["9am - 10am", "10am - 11am", "11am - 12pm", "12pm - 13pm", "13pm - 14pm", "15pm - 16pm", "16pm - 17pm", "17pm - 18pm"];
+hours = ["9am - 10am", "10am - 11am", "11am - 12pm", "12pm - 13pm", "13pm - 14pm", "15pm - 16pm", "16pm - 17pm", "17pm - 18pm"]
 
 products.each do |product|
-  hours.each do | hour |
-  start_time = hour
-  availability = true
+  hours.each do |hour|
+    start_time = hour
+    availability = true
 
-  Slot.create!(
-    start_time: start_time,
-    availability: availability,
-    product: product
-  )
-end
+    Slot.create!(
+      start_time: start_time,
+      availability: availability,
+      product: product
+    )
+  end
 end
 
 # Product.all.each do |product|
