@@ -14,15 +14,11 @@ class Booking < ApplicationRecord
   end
 
   def check_token
-    if user.tokens_balance <= slot.product.price
-      errors.add(:tokens, ": No tokens available")
-    end
+    errors.add(:tokens, ": No tokens available") if user.tokens_balance < slot.product.price
   end
 
   def check_availability
-    if slot.availability == false
-      errors.add(:available, ": Booking already taken")
-    end
+    errors.add(:available, ": Booking already taken") if slot.availability == false
   end
 
   def update_user_token_and_slot
