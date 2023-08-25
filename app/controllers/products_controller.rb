@@ -2,10 +2,10 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all
+    @products = Product.paginate(page: params[:page])
     if params[:query].present?
       sql_subquery = "name ILIKE :query OR category ILIKE :query"
-      @products = @products.where(sql_subquery, query: "%#{params[:query]}%")
+      @products = @products.where(sql_subquery, query: "%#{params[:query]}%").paginate(page: params[:page])
     end
   end
 
