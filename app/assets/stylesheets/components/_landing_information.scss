@@ -8,19 +8,9 @@
     padding-bottom: 30px;
   }
 
-   span {
-    position: absolute;
-    left: 640px;
-    font-family: 'Amaranth', sans-serif;
-    font-size: 120px;
-    padding-bottom: 40px;
 
-    background-image: linear-gradient(to bottom, #6610F2, #D4423B, #E60F05);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: black;
-  }
+
+
 
   p {
     font-size: 28px;
@@ -81,4 +71,32 @@
     background-repeat: no-repeat;
     margin-top: 115px;
   }
+}
+
+#span {
+  position: absolute;
+  left: 640px;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 120px;
+  padding-bottom: 40px;
+
+  background-image: linear-gradient(to bottom, #6610F2, #D4423B, #E60F05);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+
+#spandois {
+  position: absolute;
+  left: 446px;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 120px;
+  padding-bottom: 40px;
+
+  background-image: linear-gradient(to bottom, #6610F2, #D4423B, #E60F05);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
 }
