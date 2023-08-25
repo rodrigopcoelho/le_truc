@@ -4,6 +4,42 @@
   font-size: 25px;
 }
 
+.btn-bookings {
+  color: $purple;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.btn-add-purple {
+  background-color: $purple;
+  color: #FFF;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.btn-add {
+  background-color: $red;
+  color: #FFF;
+  padding: 8px 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 .btn-gradient {
   background: linear-gradient(137deg, #6610F2 0%, #D4423B 57.62%, #E60F05 100%);
   color: #FFF;
@@ -107,20 +143,5 @@ background: #EAEAEA;
   .btn-gradient {
     padding: 10px 60px;
     font-size: 16px;
-  }
-}
-
-.btn-add {
-  background-color: $red;
-  color: #FFF;
-  padding: 8px 50px;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  transition: all 0.4s;
-  &:hover {
-    transform: scale(1.05);
   }
 }

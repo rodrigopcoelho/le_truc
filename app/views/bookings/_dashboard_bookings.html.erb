@@ -1,7 +1,7 @@
 <div>
   <div class="dashboard-products-container">
-    <h5>Bookings</h5>
-    <%= link_to "Add", products_path, class:"btn btn-add" %>
+    <h5 class="h5-bookings">Bookings</h5>
+    <%= link_to "Add", products_path, class:"btn btn-add-purple" %>
   </div>
   <% objects.each do |object| %>
     <div class="dashboard-product-card">
@@ -11,14 +11,16 @@
       <div class="dashboard-product-card-content">
         <div class="dashboard-product-card-details">
           <h5><%= object.slot.product.name %></h5>
-          <p><%= object.slot.product.price %>💰</p>
-          <% if current_user.admin %>
-            <p><strong>Owner:</strong> @<%= object.user.username %></p>
-          <% end %>
-          <p><%= object.slot.start_time %> </p>
+          <p><%= object.slot.product.price %> <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
+          <div class="dashboard-product-card-time">
+            <% if current_user.admin %>
+              <p class="product-owner"><strong>Owner:</strong> @<%= object.user.username %></p>
+            <% end %>
+            <p class="product-time"><%= object.slot.start_time %> </p>
+          </div>
         </div>
         <div class="dashboard-product-card-buttons">
-          <%= link_to icon('fas', 'trash-can'), booking_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>
+          <%= link_to icon('fas', 'trash-can'), booking_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-bookings" %>
         </div>
       </div>
     </div>

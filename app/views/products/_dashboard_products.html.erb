@@ -1,12 +1,12 @@
 <div>
   <div class="dashboard-products-container">
-    <h5>Products</h5>
+    <h5 class="h5-products">Products</h5>
     <%= link_to "Add", new_product_path, class:"btn btn-add" %>
   </div>
   <% objects.each do |object| %>
     <div class="dashboard-product-card">
       <div>
-        <%= cl_image_tag object.photo.key, height: 100, crop: :fill %>
+        <%= cl_image_tag object.photo.key, height: 200, crop: :fill %>
       </div>
       <div class="dashboard-product-card-content">
         <div class="dashboard-product-card-details">
