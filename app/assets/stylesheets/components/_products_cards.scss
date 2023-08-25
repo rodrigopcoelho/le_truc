@@ -33,15 +33,15 @@
     font-family:'Inter', sans-serif;
   }
 
+
 }
 
+.priceh1 {
+  font-family:'Inter', sans-serif;
+}
 .product-price {
-  flex-grow: 1;
-  font-size: 20px;
-  display: flex;
+  width:95px;
   align-items: center;
-  gap: 10px;
-  margin: 0;
 
   img {
     width: 25px;

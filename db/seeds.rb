@@ -87,18 +87,15 @@ end
 # SEED Slots
 products = Product.all
 
-hours = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+hours = ["9am - 10am", "10am - 11am", "11am - 12pm", "12pm - 13pm", "13pm - 14pm", "15pm - 16pm", "16pm - 17pm", "17pm - 18pm"];
 
 products.each do |product|
-  hours.each_with_index do | hour , i |
-  break if i == hours.length - 1
+  hours.each do | hour |
   start_time = hour
-  end_time = hours[hours.find_index(hour) + 1]
   availability = true
 
   Slot.create!(
     start_time: start_time,
-    end_time: end_time,
     availability: availability,
     product: product
   )

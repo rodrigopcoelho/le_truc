@@ -15,7 +15,7 @@
           <% if current_user.admin %>
             <p><strong>Owner:</strong> @<%= object.user.username %></p>
           <% end %>
-          <p>From <%= object.slot.start_time %> to <%= object.slot.end_time %></p>
+          <p><%= object.slot.start_time %> </p>
         </div>
         <div class="dashboard-product-card-buttons">
           <%= link_to icon('fas', 'trash-can'), booking_path(object.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-rent" %>

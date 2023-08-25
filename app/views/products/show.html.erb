@@ -29,12 +29,14 @@
       </div>
 
       <div class="schedule-form cont" data-controller="toggle">
-
-        <p class="product-price"><%= @product.price %> 💰</p>
+        <div class="d-flex justify-content-center align-items-center justify-content-evenly" >
+        <h1 class="fw-bold priceh1" >Price:</h1>
+        <p class="product-price d-flex justify-content-center mb-3"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
+        </div>
 
         <%= simple_form_for @booking do |f| %>
           <div class="d-flex flex-column px-5 mb-2">
-              <%= f.association :slot,
+             <%= f.association :slot,
                 as: :check_boxes,
                 input_html: { class: "tag-selector", data: { action: "click->toggle#toggleChanged", toggle_target: "toggleButton" }, inner_text: "Hours"  },
                 item_wrapper_class: 'tag-item',
@@ -51,11 +53,6 @@
             %>
           </div>
         <% end %>
-
-        <div class="schedule-form cont">
-          <p class="product-price"><%= @product.price %>  <%= image_tag "token_03.svg", alt: "LeTrucToken"%></p>
-          <%= render "components/slots", hours: "9"%>
-        </div>
 
       </div>
     </div>

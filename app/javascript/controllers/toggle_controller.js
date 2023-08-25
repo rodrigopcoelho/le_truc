@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["toggleButton", "bookButton"];
 
   connect() {
-
+    
   }
 
   toggleChanged() {

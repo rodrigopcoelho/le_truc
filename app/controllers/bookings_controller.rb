@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
-  before_action :set_tokens_user, :set_product_price, only: %i[create destroy]
+  before_action :set_tokens_user, :set_product_price, only: %i[destroy]
 
   def create
     @slot = Slot.find(booking_params[:slot_id].second)
@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     else
       render "products/show"
     end
+    set_product_price
   end
 
   def edit
