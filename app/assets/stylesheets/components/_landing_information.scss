@@ -75,7 +75,7 @@
 
 #span {
   position: absolute;
-  left: 640px;
+  left: inherit + 50;
   font-family: 'Amaranth', sans-serif;
   font-size: 120px;
   padding-bottom: 40px;
@@ -89,7 +89,7 @@
 
 #spandois {
   position: absolute;
-  left: 446px;
+  left: inherit;
   font-family: 'Amaranth', sans-serif;
   font-size: 120px;
   padding-bottom: 40px;
