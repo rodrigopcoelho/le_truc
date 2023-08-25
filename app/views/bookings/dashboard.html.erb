@@ -1,15 +1,17 @@
-<div class="dashboard-all">
+<div class="dashboard-all user-dashboard">
 
-  <% if Booking.where(user_id: current_user.id).empty? %>
-    <div>
-      <h2>You don't have bookings yet!</h2>
-      <%= link_to 'Make a Booking', products_path, class:"btn btn-secondary" %>
-    </div>
-  <% else %>
-    <div>
-      <%= render "dashboard_bookings", objects: @bookings %>
-    </div>
-  <% end %>
+  <div class="dashboard-bookings-user">
+    <% if Booking.where(user_id: current_user.id).empty? %>
+      <div>
+        <h2>You don't have bookings yet!</h2>
+        <%= link_to 'Make a Booking', products_path, class:"btn btn-secondary" %>
+      </div>
+    <% else %>
+      <div>
+        <%= render "dashboard_bookings", objects: @bookings %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="dashboard-user-container">
     <%= render "components/profile_dashboard" %>
