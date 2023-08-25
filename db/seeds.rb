@@ -9,7 +9,7 @@ Slot.destroy_all
 Product.destroy_all
 User.destroy_all
 
-User.create(email: "admin@lewagon.pt", password: "123456", admin: true, username: "admin")
+User.create(email: "admin@lewagon.pt", password: "123456", admin: true, username: "admin", tokens_balance: 100)
 User.create(email: "mags@letruc.pt", password: "123456", admin: false, username: "mags")
 
 # METHODS
