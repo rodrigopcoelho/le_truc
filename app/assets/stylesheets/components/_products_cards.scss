@@ -179,3 +179,9 @@
   color: $white;
   text-decoration: none;
 }
+
+.user-info-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
